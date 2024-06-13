@@ -28,6 +28,9 @@ export default function App() {
     setPayload(getPayload());
   };
 
+  const [nomeDupla, setNomeDupla] = useState("");
+
+
   const [pagamento, setPagamento] = useState(false);
 
   const [pagador, setPagador] = useState("");
@@ -186,7 +189,7 @@ export default function App() {
       }
     )
       .then((res) => res.json())
-      .then((data) => {})
+      .then((data) => { })
       .catch((error) => {
         console.log(error);
       });
@@ -260,15 +263,15 @@ export default function App() {
       try {
         const successful = document.execCommand("copy"); // Executa o comando de cópia
         if (successful) {
-            setOpenSnackPayload(true); // Ativa a notificação de sucesso
-            setOpenSnack2(false); // Ativa outra ação de estado, por exemplo
+          setOpenSnackPayload(true); // Ativa a notificação de sucesso
+          setOpenSnack2(false); // Ativa outra ação de estado, por exemplo
         } else {
-            alert("Falha ao copiar o pix copia e cola, reinicie a página e tente novamente. Se o problema persistir entre em contato conosco.");
+          alert("Falha ao copiar o pix copia e cola, reinicie a página e tente novamente. Se o problema persistir entre em contato conosco.");
         }
-    } catch (err) {
+      } catch (err) {
         alert("Falha ao copiar o pix copia e cola, reinicie a página e tente novamente. Se o problema persistir entre em contato conosco.");
-    }
-    
+      }
+
       document.body.removeChild(textarea); // Remove o textarea do body
     }
   };
@@ -340,7 +343,7 @@ export default function App() {
           marginTop: "1.5em",
         }}
       >
-        <SportsTennisIcon sx={{ fontSize: "2rem" }} /> 
+        <SportsTennisIcon sx={{ fontSize: "2rem" }} />
         Inscreva-se
       </Typography>
       <Stack
@@ -350,20 +353,19 @@ export default function App() {
         sx={{ minWidth: "50vw", padding: "30px", borderRadius: "10px" }}
       >
 
-      <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Cidade</InputLabel>
+        <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">Etapa</InputLabel>
           <Select
             name="Cidade"
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             value={cidade}
-            label="Cidade"
+            label="Etapa"
             onChange={handleCidade}
           >
             <MenuItem value="TRL1000">BT1000 - Três Lagoas</MenuItem>
             <MenuItem value="BT500" disabled>BT500 - em breve</MenuItem>
             <MenuItem value="BT1000CG" disabled>BT1000 Campo Grande - em breve</MenuItem>
-            <MenuItem value="BT500CR" disabled>BT500 Costa Rica - em breve</MenuItem>
             <MenuItem value="BT500RB" disabled>BT500 Rio Brilhante - em breve</MenuItem>
 
           </Select>
@@ -390,6 +392,19 @@ export default function App() {
           fullWidth
           required
         />
+
+        <TextField
+          name="IDatleta"
+          fullWidth
+          id="outlined-basic"
+          label="ID do Tênis Integrado"
+          variant="outlined"
+          required
+        />
+
+        <Button variant="contained" href="https://www.tenisintegrado.com.br/meu_registro" target="_blank">
+          Clique aqui para pegar seu ID do Tênis Integrado
+        </Button>
 
         <TextField
           name="Numero"
@@ -456,13 +471,13 @@ export default function App() {
             <MenuItem value="N">
               <b>Não jogar</b>
             </MenuItem>
-              <ListSubheader>
-                <b>-- Sub14</b>
-              </ListSubheader>
-              <MenuItem value="Sub14 Mista" disabled={sub === "N" && true} >Sub14 Mista</MenuItem>
-              <MenuItem value="Sub14 Masculina" disabled={sub === "N" && true}>Sub14 Masculina</MenuItem>
-              <MenuItem value="Sub14 Feminino" disabled={sub === "N" && true}>Sub14 Feminino</MenuItem>
-           
+            <ListSubheader>
+              <b>-- Sub14</b>
+            </ListSubheader>
+            <MenuItem value="Sub14 Mista" disabled={sub === "N" && true} >Sub14 Mista</MenuItem>
+            <MenuItem value="Sub14 Masculina" disabled={sub === "N" && true}>Sub14 Masculina</MenuItem>
+            <MenuItem value="Sub14 Feminino" disabled={sub === "N" && true}>Sub14 Feminino</MenuItem>
+
             <ListSubheader>
               <b>-- ProA</b>
             </ListSubheader>
@@ -473,9 +488,10 @@ export default function App() {
             <ListSubheader>
               <b>-- Mista</b>
             </ListSubheader>
-            <MenuItem value="Categoria A Mista">Categoria A</MenuItem>
             <MenuItem value="Categoria B Mista">Categoria B</MenuItem>
             <MenuItem value="Categoria C Mista">Categoria C</MenuItem>
+            <MenuItem value="Categoria D Mista">Categoria D</MenuItem>
+
             <MenuItem value="Sub18 Mista">Sub18</MenuItem>
             <MenuItem value="Mais 40 Mista">Mais 40</MenuItem>
             <MenuItem value="Mais 50 Mista">Mais 50</MenuItem>
@@ -520,11 +536,11 @@ export default function App() {
             </MenuItem>
 
             <ListSubheader>
-                <b>-- Sub14</b>
-              </ListSubheader>
-              <MenuItem value="Sub14 Mista" disabled={sub === "N" && true} >Sub14 Mista</MenuItem>
-              <MenuItem value="Sub14 Masculina" disabled={sub === "N" && true}>Sub14 Masculina</MenuItem>
-              <MenuItem value="Sub14 Feminino" disabled={sub === "N" && true}>Sub14 Feminino</MenuItem>
+              <b>-- Sub14</b>
+            </ListSubheader>
+            <MenuItem value="Sub14 Mista" disabled={sub === "N" && true} >Sub14 Mista</MenuItem>
+            <MenuItem value="Sub14 Masculina" disabled={sub === "N" && true}>Sub14 Masculina</MenuItem>
+            <MenuItem value="Sub14 Feminino" disabled={sub === "N" && true}>Sub14 Feminino</MenuItem>
 
             <ListSubheader>
               <b>-- ProA</b>
@@ -536,9 +552,9 @@ export default function App() {
             <ListSubheader>
               <b>-- Mista</b>
             </ListSubheader>
-            <MenuItem value="Categoria A Mista">Categoria A</MenuItem>
             <MenuItem value="Categoria B Mista">Categoria B</MenuItem>
             <MenuItem value="Categoria C Mista">Categoria C</MenuItem>
+            <MenuItem value="Categoria D Mista">Categoria D</MenuItem>
             <MenuItem value="Sub18 Mista">Sub18</MenuItem>
             <MenuItem value="Mais 40 Mista">Mais 40</MenuItem>
             <MenuItem value="Mais 50 Mista">Mais 50</MenuItem>
@@ -582,12 +598,12 @@ export default function App() {
               <b>Não jogar</b>
             </MenuItem>
 
-              <ListSubheader>
-                <b>-- Sub14</b>
-              </ListSubheader>
-              <MenuItem value="Sub14 Mista" disabled={sub === "N" && true} >Sub14 Mista</MenuItem>
-              <MenuItem value="Sub14 Masculina" disabled={sub === "N" && true}>Sub14 Masculina</MenuItem>
-              <MenuItem value="Sub14 Feminino" disabled={sub === "N" && true}>Sub14 Feminino</MenuItem>
+            <ListSubheader>
+              <b>-- Sub14</b>
+            </ListSubheader>
+            <MenuItem value="Sub14 Mista" disabled={sub === "N" && true} >Sub14 Mista</MenuItem>
+            <MenuItem value="Sub14 Masculina" disabled={sub === "N" && true}>Sub14 Masculina</MenuItem>
+            <MenuItem value="Sub14 Feminino" disabled={sub === "N" && true}>Sub14 Feminino</MenuItem>
 
             <ListSubheader>
               <b>-- ProA</b>
@@ -599,9 +615,9 @@ export default function App() {
             <ListSubheader>
               <b>-- Mista</b>
             </ListSubheader>
-            <MenuItem value="Categoria A Mista">Categoria A</MenuItem>
             <MenuItem value="Categoria B Mista">Categoria B</MenuItem>
             <MenuItem value="Categoria C Mista">Categoria C</MenuItem>
+            <MenuItem value="Categoria D Mista">Categoria D</MenuItem>
             <MenuItem value="Sub18 Mista">Sub18</MenuItem>
             <MenuItem value="Mais 40 Mista">Mais 40</MenuItem>
             <MenuItem value="Mais 50 Mista">Mais 50</MenuItem>
@@ -632,7 +648,10 @@ export default function App() {
         {category1 !== "N" && (
           <TextField
             name="Dupla1"
+            value={nomeDupla}
+            onChange={(e) => setNomeDupla(e.target.value)}
             fullWidth
+            required={category1 === "N" ? false : true}
             id="outlined-basic"
             label={`Dupla ${category1} (nome e sobrenome)`}
             variant="outlined"
@@ -643,6 +662,7 @@ export default function App() {
           <TextField
             name="Dupla2"
             fullWidth
+            required={category2 === "N" ? false : true}
             id="outlined-basic"
             label={`Dupla ${category2} (nome e sobrenome)`}
             variant="outlined"
@@ -653,6 +673,7 @@ export default function App() {
           <TextField
             name="Dupla3"
             fullWidth
+            required={category3 === "N" ? false : true}
             id="outlined-basic"
             label={`Dupla ${category3} (nome e sobrenome)`}
             variant="outlined"
@@ -670,16 +691,30 @@ export default function App() {
           required
         />
 
-        <TextField
-          id="outlined-basic"
-          label="Tamanho de Camiseta"
-          variant="outlined"
-          fullWidth
-          name="Camiseta"
-          value={camiseta}
-          onChange={handleCamiseta}
-          required
-        />
+        <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">Tamanho de Camiseta</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            label="Tamanho de Camiseta"
+            value={camiseta}
+            onChange={(e) => setCamiseta(e.target.value)}
+            name="Camiseta"
+            defaultValue="P"
+
+
+          >
+            <MenuItem value="P">P</MenuItem>
+            <MenuItem value="M">M</MenuItem>
+            <MenuItem value="G">G</MenuItem>
+            <MenuItem value="GG">GG</MenuItem>
+            <MenuItem value="XG">XGG</MenuItem>
+
+
+          </Select>
+        </FormControl>
+
+
 
         {/*  VALOR E PAGAMENTO  */}
         {category1 ? (
@@ -726,7 +761,7 @@ export default function App() {
           <></>
         )}
 
-        {category1 && nome && sobrenome && pagador ? (
+        {category1 && nome && sobrenome && pagador && nomeDupla.length > 1 ? (
           <Button
             variant="contained"
             onClick={() => {
