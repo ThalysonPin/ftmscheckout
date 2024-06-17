@@ -106,7 +106,7 @@ export default function App() {
     // Define o preço para a segunda inscrição
     if (category2.includes("Sub14")) {
       setCategory2Value(filiado === "N" ? 70 : 60);
-    } else if (category2 === "ProA Masc" || category2 === "ProA Fem") {
+    } else if (category2 === "ProA Masculina" || category2 === "ProA Feminina") {
       setCategory2Value(filiado === "N" ? 150 : 130);
     } else if (category2 === "ProA Mista") {
       setCategory2Value(filiado === "N" ? 130 : 110);
@@ -122,7 +122,7 @@ export default function App() {
     // Define o preço para a terceira inscrição
     if (category3.includes("Sub14")) {
       setCategory3Value(filiado === "N" ? 60 : 50);
-    } else if (category3 === "ProA Masc" || category3 === "ProA Fem") {
+    } else if (category3 === "ProA Masculina" || category3 === "ProA Feminina") {
       setCategory3Value(filiado === "N" ? 150 : 130);
     } else if (category3 === "ProA Mista") {
       setCategory3Value(filiado === "N" ? 130 : 110);
@@ -543,13 +543,6 @@ export default function App() {
             <MenuItem value="Sub14 Feminino" disabled={sub === "N" && true}>Sub14 Feminino</MenuItem>
 
             <ListSubheader>
-              <b>-- ProA</b>
-            </ListSubheader>
-            <MenuItem value="ProA Mista">ProA Mista</MenuItem>
-            <MenuItem value="ProA Masculina">ProA Masculina</MenuItem>
-            <MenuItem value="ProA Feminino">ProA Feminino</MenuItem>
-
-            <ListSubheader>
               <b>-- Mista</b>
             </ListSubheader>
             <MenuItem value="Categoria B Mista">Categoria B</MenuItem>
@@ -604,13 +597,6 @@ export default function App() {
             <MenuItem value="Sub14 Mista" disabled={sub === "N" && true} >Sub14 Mista</MenuItem>
             <MenuItem value="Sub14 Masculina" disabled={sub === "N" && true}>Sub14 Masculina</MenuItem>
             <MenuItem value="Sub14 Feminino" disabled={sub === "N" && true}>Sub14 Feminino</MenuItem>
-
-            <ListSubheader>
-              <b>-- ProA</b>
-            </ListSubheader>
-            <MenuItem value="ProA Mista">ProA Mista</MenuItem>
-            <MenuItem value="ProA Masculina">ProA Masculina</MenuItem>
-            <MenuItem value="ProA Feminino">ProA Feminino</MenuItem>
 
             <ListSubheader>
               <b>-- Mista</b>
